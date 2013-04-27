@@ -1,0 +1,72 @@
+﻿<phoneNavigation:PhoneApplicationPage 
+    x:Class="PigLatin.Phone.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phoneNavigation="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone.Shell"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}">
+
+    <phoneNavigation:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="myAppBar" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Menu 1" />
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phoneNavigation:PhoneApplicationPage.ApplicationBar>
+
+    <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitleGrid is the name of the application and page title-->
+        <Grid x:Name="TitleGrid" Grid.Row="0">
+            <TextBlock Text="Pig Latin Translator" x:Name="textBlockPageTitle" Style="{StaticResource PhoneTextPageTitle1Style}"/>
+            <!--<TextBlock Text="Pig Latin Translator" x:Name="textBlockListTitle" Style="{StaticResource PhoneTextPageTitle2Style}"/>-->
+        </Grid>
+
+        <!--ContentGrid is empty. Place new content here-->
+        <Grid x:Name="ContentGrid" Grid.Row="1">
+            
+            <TextBlock 
+                x:Name="lblInformation"
+                Text="Type in a word, words, or a sentence, then hit Translate." TextWrapping="Wrap" Margin="76,72,65,608" />
+            
+            <TextBlock 
+                Text="English"
+                Height="30"
+                Width="100" 
+                Margin="20,198,360,525" />
+            
+            <TextBox 
+                x:Name="txtEnglish" 
+                Height="25" 
+                Margin="0,219,0,462" />
+            
+            <Button 
+                x:Name="btnTranslate" 
+                Click="btnTranslate_Click"
+                Content="Translate"
+                Height="40" Margin="0,317,0,364" />
+
+            <TextBlock 
+                Text="Pig Latin"
+                Height="30" 
+                Margin="20,416,360,307"  
+                Width="100" />
+            
+            <TextBox 
+                x:Name="txtPigLatin"
+                Height="25" 
+                Margin="0,438,0,243" />
+            
+        </Grid>
+    </Grid>
+    
+</phoneNavigation:PhoneApplicationPage>
